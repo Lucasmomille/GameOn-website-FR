@@ -111,8 +111,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -186,6 +184,8 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  position: relative;
+  z-index: 1;
 }
 
 label {
@@ -226,12 +226,12 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
     color: red;
-} */
+}
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -305,6 +305,7 @@ input[data-error]::after {
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
+  z-index: 5;
 }
 .close:before,
 .close:after {
@@ -406,6 +407,7 @@ input[data-error]::after {
 }
 .hero-section {
   min-height: 93vh;
+  width: 100%;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -415,12 +417,12 @@ input[data-error]::after {
 }
 .hero-content {
   padding: 51px 67px;
+  width: 100%;
   grid-column: span 4;
   background: #232323;
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
 }
 .hero-content::after {
   content: "";
@@ -441,7 +443,7 @@ input[data-error]::after {
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  width: 150%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -495,11 +497,11 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 4rem;
     white-space: normal;
   }
   .hero-text {
-    width: unset;
+    width: 100%;
     font-size: 1.5rem;
   }
   .hero-img img {
@@ -536,9 +538,39 @@ footer {
 }
 
 .border-error {
-  border: red 1rem solid;
+  border: red .2rem solid;
 }
 
 .none {
-  display: none;
+  display: none !important;
+}
+
+.modal-submit {
+  height: 600px;
+  background-color: #232323;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  color:white;
+}
+.submitted {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.btn-close {
+  text-decoration: none;
+  background: #fe142f;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 1rem;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  border-radius: 7px;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }

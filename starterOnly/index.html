@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
@@ -64,43 +64,46 @@
               class="form"
             >
               <div
-                class="formData">
+                class="formData"
+                data-error="Minimum deux caractères" 
+                data-error-visible="false">
                 <label>Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
-                  required
-                /><br>
-                <span class="message-error none" id="errorFirst">Minimum deux caractères</span>
+                />
               </div>
               <div
-                class="formData">
+                class="formData"
+                data-error="Min 2 caractères" 
+                data-error-visible="false">
                 <label>Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
-                  name="last"
-                /><br>
-                <span class="message-error none" id="errorLast">Minimum deux caractères</span>
+                  name="last" 
+                />
               </div>
               <div
-                class="formData">
+                class="formData"
+                data-error="L'adresse mail doit être valide" 
+                data-error-visible="false">
                 <label>E-mail</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="email"
                   name="email"
-                  required
                 /><br>
                 <span class="message-error none" id="errorEmail">L'adresse mail doit être valide</span>
               </div>
               <div
-                class="formData">
+                class="formData"
+                data-error="Vous devez entrer votre date de naissance" 
+                data-error-visible="false">
                 <label>Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -108,17 +111,19 @@
                   id="birthdate"
                   name="birthdate"
                 /><br>
-                <span class="message-error none" id="errorBirthday">Vous devez entrer votre date de naissance</span>
               </div>
               <div
-                class="formData">
+                class="formData"
+                data-error="Doit contenir un chiffre" 
+                data-error-visible="false">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
-                <span class="message-error none" id="errorQuantity"></span>
+                <input type="text" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
-                class="formData">
+                class="formData"
+                data-error="Vous devez choisir une option" 
+                data-error-visible="false">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -185,7 +190,6 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-                <span class="message-error none" id="errorCities">Vous devez choisir une option</span>
               </div>
 
               <div
@@ -196,6 +200,8 @@
                     class="checkbox-icon"
                     type="checkbox"
                     id="checkbox1"
+                    data-error="Vous devez accepter les conditions d'utilisation" 
+                    data-error-visible="false"
                     checked
                   />
                   J'ai lu et accepté les conditions d'utilisation.
@@ -215,7 +221,10 @@
                 value="C'est parti"
               />
             </form>
-            <div class="submitted none" id="submitted">Merci ! Votre réservation a été reçue.</div>
+          </div>
+          <div class="modal-submit none" id="submitted">
+            <div class="submitted" >Merci ! Votre réservation a été reçue.</div>
+            <a href="#" class="btn-close">Fermer</a>
           </div>
         </div>
       </div>
