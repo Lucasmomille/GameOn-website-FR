@@ -42,7 +42,7 @@ const validateBirthday = (birthday) => {
   const isDate = (date) => {
     return (new Date(date) !== 'Invalid Date') && !isNaN(new Date(date))
   }
-  if (birthday.value.length > 0 && isDate(birthday)) {
+  if (birthday.value.length > 0 && isDate(birthday.value)) {
     birthday.parentNode.dataset.errorVisible = false
     return true
   } else {
